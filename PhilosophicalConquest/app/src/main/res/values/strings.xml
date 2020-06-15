@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Philosophical Conquest</string>
+    <string name="app_title_1">Philosophical</string>
+    <string name="app_title_2">Conquest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
