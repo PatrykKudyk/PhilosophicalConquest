@@ -3,11 +3,14 @@ package com.example.philosophicalconquest.fragments
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
 
@@ -34,6 +37,8 @@ class GameFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var recyclerView: RecyclerView
     private lateinit var backToMenuButton: Button
+    private var time = -1
+    private lateinit var timeTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,6 +93,7 @@ class GameFragment : Fragment() {
 
     private fun initFragment() {
         backToMenuButton = rootView.findViewById(R.id.game_button_back)
+        timeTextView = rootView.findViewById(R.id.game_time_text_view)
 
         backToMenuButton.setOnClickListener {
             val mainMenuFragment = MainMenuFragment.newInstance()
@@ -100,5 +106,36 @@ class GameFragment : Fragment() {
                 ?.replace(R.id.frame_layout, mainMenuFragment)
                 ?.commit()
         }
+
+        loopGame()
+    }
+
+    private fun loopGame() {
+        val mainHandler = Handler(Looper.getMainLooper())
+
+        mainHandler.post(object : Runnable {
+            override fun run() {
+                updateClock()
+                mainHandler.postDelayed(this, 1000)
+            }
+        })
+    }
+
+    private fun updateClock() {
+        time++
+        val timeFirst = (time.toDouble() / 60.0).toInt()
+        val timeSecond = time % 60
+        if (timeSecond == 0) {
+            timeTextView.text = timeFirst.toString() + ":00"
+        } else if (timeSecond < 10) {
+            timeTextView.text = timeFirst.toString() + ":0" + timeSecond.toString()
+        } else {
+            timeTextView.text = timeFirst.toString() + ":" + timeSecond.toString()
+        }
+    }
+
+    private fun isEnd(): Boolean {
+
+        return false
     }
 }
