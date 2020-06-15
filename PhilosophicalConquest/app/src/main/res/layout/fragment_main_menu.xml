@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.MainMenuFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <TextView
+            android:id="@+id/title_1_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:fontFamily="@font/archeologicaps"
+            android:text="@string/app_title_1"
+            android:textSize="35sp"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/archeologicaps"
+            android:gravity="center"
+            android:text="@string/app_title_2"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_1_text_view" />
+
+        <Button
+            android:id="@+id/button_menu_new_game"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_background_light"
+            android:textColor="@color/colorBlack"
+            android:text="@string/menu_new_game"
+            android:textSize="18sp"
+            android:fontFamily="@font/archeologicaps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/button_menu_high_scores"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/button_backgroumd_dark"
+            android:textColor="@color/colorBlack"
+            android:text="@string/menu_high_scores"
+            android:textSize="18sp"
+            android:fontFamily="@font/archeologicaps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_menu_new_game" />
+
+        <Button
+            android:id="@+id/button_menu_rules"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/button_background_medium"
+            android:textColor="@color/colorBlack"
+            android:text="@string/menu_rules"
+            android:textSize="18sp"
+            android:fontFamily="@font/archeologicaps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_menu_high_scores" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

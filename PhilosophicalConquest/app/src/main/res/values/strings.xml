@@ -2,6 +2,9 @@
     <string name="app_name">Philosophical Conquest</string>
     <string name="app_title_1">Philosophical</string>
     <string name="app_title_2">Conquest</string>
+    <string name="menu_new_game">New Game</string>
+    <string name="menu_rules">Rules</string>
+    <string name="menu_high_scores">Highscores</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
