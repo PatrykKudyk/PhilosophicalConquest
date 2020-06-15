@@ -4,11 +4,11 @@
     <color name="colorPrimaryDark">#807154</color>
     <color name="colorAccent">#807154</color>
     <color name="colorBackground">#fff0d3</color>
-    <color name="colorYellowLight">#FFE2A8</color>
-    <color name="colorYellowLightMedium">#DFC693</color>
-    <color name="colorYellowMedium">#BFA97E</color>
-    <color name="colorYellowMediumDark">#9F8D69</color>
-    <color name="colorYellowDark">#807154</color>
+    <color name="colorYellowLight">#BFA97E</color>
+    <color name="colorYellowLightMedium">#9F8D69</color>
+    <color name="colorYellowMedium">#807154</color>
+    <color name="colorYellowMediumDark">#483F2F</color>
+    <color name="colorYellowDark">#302A20</color>
     <color name="colorBrown">#40382A</color>
     <color name="colorBlack">#201C15</color>
 </resources>

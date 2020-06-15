@@ -33,7 +33,7 @@ class MainMenuFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var newGameButton: Button
     private lateinit var rulesButton: Button
-
+    private lateinit var highscoresButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,33 +86,47 @@ class MainMenuFragment : Fragment() {
     }
 
     private fun initFragment() {
-        newGameButton = rootView.findViewById(R.id.button_new_game)
-        rulesButton = rootView.findViewById(R.id.button_rules)
+        newGameButton = rootView.findViewById(R.id.button_menu_new_game)
+        rulesButton = rootView.findViewById(R.id.button_menu_rules)
+        highscoresButton = rootView.findViewById(R.id.button_menu_high_scores)
 
         newGameButton.setOnClickListener {
-//            val gameSizeFragment = GameSizeFragment.newInstance()
-//            fragmentManager
-//                ?.beginTransaction()
-//                ?.setCustomAnimations(
-//                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-//                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-//                )
-//                ?.replace(R.id.frame_layout, gameSizeFragment)
-//                ?.addToBackStack(gameSizeFragment.toString())
-//                ?.commit()
+            val choiceGameFragment = ChoiceGameFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, choiceGameFragment)
+                ?.addToBackStack(choiceGameFragment.toString())
+                ?.commit()
         }
 
         rulesButton.setOnClickListener {
-//            val rulesFragment = RulesFragment.newInstance()
-//            fragmentManager
-//                ?.beginTransaction()
-//                ?.setCustomAnimations(
-//                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-//                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-//                )
-//                ?.replace(R.id.frame_layout, rulesFragment)
-//                ?.addToBackStack(rulesFragment.toString())
-//                ?.commit()
+            val rulesFragment = RulesFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, rulesFragment)
+                ?.addToBackStack(rulesFragment.toString())
+                ?.commit()
+        }
+
+        highscoresButton.setOnClickListener {
+            val choiceHighscoresFragment = ChoiceHighscoresFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, choiceHighscoresFragment)
+                ?.addToBackStack(choiceHighscoresFragment.toString())
+                ?.commit()
         }
     }
 }
