@@ -2,6 +2,7 @@
     <string name="app_name">Philosophical Conquest</string>
     <string name="app_title_1">Philosophical</string>
     <string name="app_title_2">Conquest</string>
+    <string name="app_title_combined">Philosophical Conquest</string>
     <string name="menu_new_game">New Game</string>
     <string name="menu_rules">Rules</string>
     <string name="menu_high_scores">Highscores</string>
@@ -16,6 +17,7 @@
     Good luck</string>
     <string name="scores_choice_title">What game type scores you want to see</string>
     <string name="game_choice_title">What game type you want to play</string>
+    <string name="game_button_back_to_menu">Back to menu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
