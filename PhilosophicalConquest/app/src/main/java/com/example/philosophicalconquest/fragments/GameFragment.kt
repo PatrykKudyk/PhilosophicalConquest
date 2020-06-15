@@ -15,8 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
 import com.example.philosophicalconquest.models.MarginItemDecoration
-import com.example.philosophicalconquest.models.PhilosophyCell
-import com.example.philosophicalconquest.recycler.PhilosofyAdapter
+import com.example.philosophicalconquest.recycler.PhilosophyAdapter
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,6 +41,7 @@ class GameFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var backToMenuButton: Button
     private var time = -1
+    private lateinit var moneyTextView: TextView
     private lateinit var timeTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +99,7 @@ class GameFragment : Fragment() {
         backToMenuButton = rootView.findViewById(R.id.game_button_back)
         timeTextView = rootView.findViewById(R.id.game_time_text_view)
         recyclerView = rootView.findViewById(R.id.game_recycler_view)
+        moneyTextView = rootView.findViewById(R.id.game_money_text_view)
 
         val mLayoutManager: LinearLayoutManager = LinearLayoutManager(this.context)
         recyclerView.layoutManager = mLayoutManager
@@ -108,7 +109,7 @@ class GameFragment : Fragment() {
                 12
             )
         )
-        recyclerView.adapter = PhilosofyAdapter()
+        recyclerView.adapter = PhilosophyAdapter()
 
 
         backToMenuButton.setOnClickListener {
@@ -132,6 +133,7 @@ class GameFragment : Fragment() {
         mainHandler.post(object : Runnable {
             override fun run() {
                 updateClock()
+                isEnd()
                 mainHandler.postDelayed(this, 1000)
             }
         })
@@ -151,7 +153,18 @@ class GameFragment : Fragment() {
     }
 
     private fun isEnd(): Boolean {
-
+        if (moneyTextView.text.toString().toInt() >= 1000000) {
+            val winFragment = WinFragment.newInstance(param1 as Int)
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, winFragment)
+                ?.commit()
+            return true
+        }
         return false
     }
 }

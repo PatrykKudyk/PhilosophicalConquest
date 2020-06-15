@@ -36,5 +36,6 @@
     <string name="philosophy_income_7">2 000 per second</string>
     <string name="philosophy_income_8">10 000 per second</string>
     <string name="philosophy_income_9">60 000 per second</string>
+    <string name="philosophy_owned">Owned </string>
 
 </resources>

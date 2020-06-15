@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.philosophicalconquest.R
 import com.example.philosophicalconquest.models.PhilosophyCell
+import kotlinx.android.synthetic.main.fragment_game.view.*
 import kotlinx.android.synthetic.main.recycler_view_cell_philosophy.view.*
 
-class PhilosofyAdapter() :
+class PhilosophyAdapter() :
     RecyclerView.Adapter<PhilosophyViewHolder>() {
 
     override fun getItemCount(): Int {
@@ -35,6 +36,8 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_1)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_1)
+                holder.view.philosophy_cell_owned.text = " "
+                holder.view.philosophy_cell_owned_amount.text = " "
             }
             1 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.philosophy)
@@ -43,6 +46,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_2)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_2)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             2 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.greek3)
@@ -51,6 +55,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_3)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_3)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             3 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.greek2)
@@ -59,6 +64,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_4)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_4)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             4 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.roman)
@@ -67,6 +73,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_5)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_5)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             5 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.museum)
@@ -75,6 +82,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_6)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_6)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             6 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.forum)
@@ -83,6 +91,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_7)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_7)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             7 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.library)
@@ -91,6 +100,7 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_8)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_8)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
             8 -> {
                 holder.view.philosophy_cell_image.setImageResource(R.drawable.school)
@@ -99,11 +109,67 @@ class PhilosofyAdapter() :
                     holder.view.context.getString(R.string.philosophy_income_9)
                 holder.view.philosophy_cell_title.text =
                     holder.view.context.getString(R.string.philosophy_cell_9)
+                holder.view.philosophy_cell_owned.text = holder.view.context.getString(R.string.philosophy_owned)
+                holder.view.philosophy_cell_owned_amount.text = "0"
             }
         }
-    }
 
-    private fun getStringIdentifier(context: Context, name: String): Int {
-        return context.resources.getIdentifier(name, "string", context.packageName)
+        holder.view.philosophy_cell_card_view.setOnClickListener {
+            val money = holder.view.rootView.game_money_text_view
+            val amount = holder.view.philosophy_cell_owned_amount
+            when (position) {
+                0 -> {
+                    money.text = (money.text.toString().toInt() + 1).toString()
+                }
+                1 -> {
+                    if (money.text.toString().toInt() >= 15) {
+                        money.text = (money.text.toString().toInt() - 15 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                2 -> {
+                    if (money.text.toString().toInt() >= 60) {
+                        money.text = (money.text.toString().toInt() - 60 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                3 -> {
+                    if (money.text.toString().toInt() >= 150) {
+                        money.text = (money.text.toString().toInt() - 150 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                4 -> {
+                    if (money.text.toString().toInt() >= 650) {
+                        money.text = (money.text.toString().toInt() - 650 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                5 -> {
+                    if (money.text.toString().toInt() >= 3500) {
+                        money.text = (money.text.toString().toInt() - 650 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                6 -> {
+                    if (money.text.toString().toInt() >= 20000) {
+                        money.text = (money.text.toString().toInt() - 650 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                7 -> {
+                    if (money.text.toString().toInt() >= 170000) {
+                        money.text = (money.text.toString().toInt() - 650 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+                8 -> {
+                    if (money.text.toString().toInt() >= 700000) {
+                        money.text = (money.text.toString().toInt() - 650 ).toString()
+                        amount.text = (amount.text.toString().toInt() + 1).toString()
+                    }
+                }
+            }
+        }
     }
 }
