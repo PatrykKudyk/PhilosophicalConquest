@@ -11,8 +11,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
+import com.example.philosophicalconquest.models.MarginItemDecoration
+import com.example.philosophicalconquest.models.PhilosophyCell
+import com.example.philosophicalconquest.recycler.PhilosofyAdapter
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -94,6 +98,18 @@ class GameFragment : Fragment() {
     private fun initFragment() {
         backToMenuButton = rootView.findViewById(R.id.game_button_back)
         timeTextView = rootView.findViewById(R.id.game_time_text_view)
+        recyclerView = rootView.findViewById(R.id.game_recycler_view)
+
+        val mLayoutManager: LinearLayoutManager = LinearLayoutManager(this.context)
+        recyclerView.layoutManager = mLayoutManager
+
+        recyclerView.addItemDecoration(
+            MarginItemDecoration(
+                12
+            )
+        )
+        recyclerView.adapter = PhilosofyAdapter()
+
 
         backToMenuButton.setOnClickListener {
             val mainMenuFragment = MainMenuFragment.newInstance()
