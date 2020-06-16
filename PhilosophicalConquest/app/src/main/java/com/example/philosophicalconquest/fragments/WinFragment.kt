@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.philosophicalconquest.R
 
 
@@ -26,17 +29,21 @@ private const val ARG_PARAM2 = "param2"
 class WinFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: Int? = null
-    private var param2: String? = null
+    private var param2: Int? = null
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-
+    private lateinit var numberTextView: TextView
+    private lateinit var timeTextView: TextView
+    private lateinit var saveScoreButton: Button
+    private lateinit var playAgainButton: Button
+    private lateinit var backToMenuButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getInt(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            param2 = it.getInt(ARG_PARAM2)
         }
     }
 
@@ -75,15 +82,91 @@ class WinFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: Int) =
+        fun newInstance(param1: Int, param2: Int) =
             WinFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_PARAM1, param1)
+                    putInt(ARG_PARAM2, param2)
                 }
             }
     }
 
     private fun initFragment() {
+        numberTextView = rootView.findViewById(R.id.win_number_text_view)
+        timeTextView = rootView.findViewById(R.id.win_time_text_view)
+        saveScoreButton = rootView.findViewById(R.id.button_win_save_score)
+        playAgainButton = rootView.findViewById(R.id.button_win_play_again)
+        backToMenuButton = rootView.findViewById(R.id.button_win_back_to_menu)
 
+        when (param1) {
+            1 -> {
+                numberTextView.text = getString(R.string.win_short)
+            }
+            2 -> {
+                numberTextView.text = getString(R.string.win_medium)
+            }
+            3 -> {
+                numberTextView.text = getString(R.string.win_medium)
+            }
+        }
+
+        if(param2 as Int % 60 == 0){
+            timeTextView.text = (param2 as Int /60).toString() + ":00"
+        } else if (param2 as Int % 60 < 10){
+            timeTextView.text = (param2 as Int /60).toString() + ":0" + (param2 as Int % 60).toString()
+        } else {
+            timeTextView.text = (param2 as Int /60).toString() + ":" + (param2 as Int % 60).toString()
+        }
+
+        playAgainButton.setOnClickListener {
+            when (param1) {
+                1 -> {
+                    val gameFragment = GameFragment.newInstance(1)
+                    fragmentManager
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
+                }
+                2 -> {
+                    val gameFragment = GameFragment.newInstance(2)
+                    fragmentManager
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
+                }
+                3 -> {
+                    val gameFragment = GameFragment.newInstance(3)
+                    fragmentManager
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
+                }
+            }
+        }
+
+        backToMenuButton.setOnClickListener {
+            val menuFragment = MainMenuFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, menuFragment)
+                ?.commit()
+        }
     }
+
 }
