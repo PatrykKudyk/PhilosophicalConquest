@@ -2,6 +2,7 @@
     <string name="app_name">Philosophical Conquest</string>
     <string name="app_title_1">Philosophical</string>
     <string name="app_title_2">Conquest</string>
+    <string name="app_title_combined">Philosophical Conquest</string>
     <string name="menu_new_game">New Game</string>
     <string name="menu_rules">Rules</string>
     <string name="menu_high_scores">Highscores</string>
@@ -16,6 +17,25 @@
     Good luck</string>
     <string name="scores_choice_title">What game type scores you want to see</string>
     <string name="game_choice_title">What game type you want to play</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_button_back_to_menu">Back to menu</string>
+    <string name="philosophy_cell_1">Basic philosopher</string>
+    <string name="philosophy_cell_2">Philosophy believer</string>
+    <string name="philosophy_cell_3">Philosophy professor</string>
+    <string name="philosophy_cell_4">Local town philosopher</string>
+    <string name="philosophy_cell_5">Local province philosopher</string>
+    <string name="philosophy_cell_6">Philosophers meetings</string>
+    <string name="philosophy_cell_7">Philosophical forum</string>
+    <string name="philosophy_cell_8">Library of philosophy</string>
+    <string name="philosophy_cell_9">Academy of philosophy</string>
+    <string name="philosophy_income_1">1 per tap</string>
+    <string name="philosophy_income_2">1 per second</string>
+    <string name="philosophy_income_3">5 per second</string>
+    <string name="philosophy_income_4">25 per second</string>
+    <string name="philosophy_income_5">100 per second</string>
+    <string name="philosophy_income_6">500 per second</string>
+    <string name="philosophy_income_7">2 000 per second</string>
+    <string name="philosophy_income_8">10 000 per second</string>
+    <string name="philosophy_income_9">60 000 per second</string>
+    <string name="philosophy_owned">Owned </string>
+
 </resources>
