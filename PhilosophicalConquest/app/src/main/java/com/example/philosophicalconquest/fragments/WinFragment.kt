@@ -1,5 +1,6 @@
 package com.example.philosophicalconquest.fragments
 
+import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -9,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.philosophicalconquest.R
+import com.example.philosophicalconquest.db.DataBaseHelper
+import com.example.philosophicalconquest.db.TableInfo
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -106,16 +110,18 @@ class WinFragment : Fragment() {
                 numberTextView.text = getString(R.string.win_medium)
             }
             3 -> {
-                numberTextView.text = getString(R.string.win_medium)
+                numberTextView.text = getString(R.string.win_long)
             }
         }
 
-        if(param2 as Int % 60 == 0){
-            timeTextView.text = (param2 as Int /60).toString() + ":00"
-        } else if (param2 as Int % 60 < 10){
-            timeTextView.text = (param2 as Int /60).toString() + ":0" + (param2 as Int % 60).toString()
+        if (param2 as Int % 60 == 0) {
+            timeTextView.text = (param2 as Int / 60).toString() + ":00"
+        } else if (param2 as Int % 60 < 10) {
+            timeTextView.text =
+                (param2 as Int / 60).toString() + ":0" + (param2 as Int % 60).toString()
         } else {
-            timeTextView.text = (param2 as Int /60).toString() + ":" + (param2 as Int % 60).toString()
+            timeTextView.text =
+                (param2 as Int / 60).toString() + ":" + (param2 as Int % 60).toString()
         }
 
         playAgainButton.setOnClickListener {
@@ -166,6 +172,31 @@ class WinFragment : Fragment() {
                 )
                 ?.replace(R.id.frame_layout, menuFragment)
                 ?.commit()
+        }
+
+        saveScoreButton.setOnClickListener {
+            val dbHelper = DataBaseHelper(rootView.context)
+            val db = dbHelper.writableDatabase
+            val value = ContentValues()
+            value.put("score", param2 as Int)
+            when (param1 as Int) {
+                1 -> {
+                    value.put("type", "short")
+                }
+                2 -> {
+                    value.put("type", "medium")
+                }
+                3 -> {
+                    value.put("type", "long")
+                }
+            }
+            db.insertOrThrow(TableInfo.TABLE_NAME, null, value)
+            Toast.makeText(
+                rootView.context,
+                getString(R.string.toast_database_save_success),
+                Toast.LENGTH_SHORT
+            ).show()
+            saveScoreButton.visibility = View.GONE
         }
     }
 

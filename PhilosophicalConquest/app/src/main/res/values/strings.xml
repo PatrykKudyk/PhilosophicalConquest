@@ -47,4 +47,5 @@
     <string name="win_button_play_again">Play again</string>
     <string name="win_button_save_scode">Save score</string>
     <string name="win_button_back_to_menu">Back to menu</string>
+    <string name="toast_database_save_success">Successfully saved score</string>
 </resources>
