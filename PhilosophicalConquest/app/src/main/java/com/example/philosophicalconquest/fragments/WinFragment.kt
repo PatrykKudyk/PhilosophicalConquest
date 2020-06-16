@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import com.example.philosophicalconquest.R
 import com.example.philosophicalconquest.db.DataBaseHelper
 import com.example.philosophicalconquest.db.TableInfo
+import kotlinx.android.synthetic.main.fragment_win.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -39,6 +40,7 @@ class WinFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var numberTextView: TextView
     private lateinit var timeTextView: TextView
+    private lateinit var nickname: TextView
     private lateinit var saveScoreButton: Button
     private lateinit var playAgainButton: Button
     private lateinit var backToMenuButton: Button
@@ -101,7 +103,7 @@ class WinFragment : Fragment() {
         saveScoreButton = rootView.findViewById(R.id.button_win_save_score)
         playAgainButton = rootView.findViewById(R.id.button_win_play_again)
         backToMenuButton = rootView.findViewById(R.id.button_win_back_to_menu)
-
+        nickname = rootView.findViewById(R.id.win_text_input_nickname)
         when (param1) {
             1 -> {
                 numberTextView.text = getString(R.string.win_short)
@@ -175,28 +177,40 @@ class WinFragment : Fragment() {
         }
 
         saveScoreButton.setOnClickListener {
-            val dbHelper = DataBaseHelper(rootView.context)
-            val db = dbHelper.writableDatabase
-            val value = ContentValues()
-            value.put("score", param2 as Int)
-            when (param1 as Int) {
-                1 -> {
-                    value.put("type", "short")
-                }
-                2 -> {
-                    value.put("type", "medium")
-                }
-                3 -> {
-                    value.put("type", "long")
-                }
-            }
-            db.insertOrThrow(TableInfo.TABLE_NAME, null, value)
-            Toast.makeText(
-                rootView.context,
-                getString(R.string.toast_database_save_success),
-                Toast.LENGTH_SHORT
-            ).show()
-            saveScoreButton.visibility = View.GONE
+           if(nickname.text.toString() != ""){
+               val dbHelper = DataBaseHelper(rootView.context)
+               val db = dbHelper.writableDatabase
+               val value = ContentValues()
+               value.put("score", param2 as Int)
+               when (param1 as Int) {
+                   1 -> {
+                       value.put("type", "short")
+                   }
+                   2 -> {
+                       value.put("type", "medium")
+                   }
+                   3 -> {
+                       value.put("type", "long")
+                   }
+               }
+               value.put("nick", nickname.text.toString())
+               db.insertOrThrow(TableInfo.TABLE_NAME, null, value)
+               Toast.makeText(
+                   rootView.context,
+                   getString(R.string.toast_database_save_success),
+                   Toast.LENGTH_SHORT
+               ).show()
+               saveScoreButton.visibility = View.GONE
+               nickname.text = ""
+               nickname.clearFocus()
+               nickname.visibility = View.GONE
+           } else {
+               Toast.makeText(
+                   rootView.context,
+                   getString(R.string.toast_enter_nickname),
+                   Toast.LENGTH_SHORT
+               ).show()
+           }
         }
     }
 
