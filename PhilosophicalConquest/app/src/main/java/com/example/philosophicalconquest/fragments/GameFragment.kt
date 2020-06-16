@@ -40,7 +40,7 @@ class GameFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var backToMenuButton: Button
     private var time = -1
-    private var ownedArray = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 400)
+    private var ownedArray = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0)
     private var money = 0
     private lateinit var moneyTextView: TextView
     private lateinit var timeTextView: TextView
@@ -308,7 +308,7 @@ class GameFragment : Fragment() {
     private fun isEnd(): Boolean {
        if(param1 as Int == 1) {
            if (money >= 1000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int)
+               val winFragment = WinFragment.newInstance(param1 as Int, time)
                fragmentManager
                    ?.beginTransaction()
                    ?.setCustomAnimations(
@@ -321,7 +321,7 @@ class GameFragment : Fragment() {
            }
        } else if (param1 as Int == 2){
            if (money >= 50000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int)
+               val winFragment = WinFragment.newInstance(param1 as Int, time)
                fragmentManager
                    ?.beginTransaction()
                    ?.setCustomAnimations(
@@ -334,7 +334,7 @@ class GameFragment : Fragment() {
            }
        } else if (param1 as Int == 3) {
            if (money >= 300000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int)
+               val winFragment = WinFragment.newInstance(param1 as Int, time)
                fragmentManager
                    ?.beginTransaction()
                    ?.setCustomAnimations(

@@ -37,5 +37,15 @@
     <string name="philosophy_income_8">10 000 per second</string>
     <string name="philosophy_income_9">60 000 per second</string>
     <string name="philosophy_owned">Owned </string>
-
+    <string name="win_1">Congratulations\n\n
+        You have reached</string>
+    <string name="win_short">1 000 000</string>
+    <string name="win_medium">50 000 000</string>
+    <string name="win_long">300 000 000</string>
+    <string name="win_2">Philosophers</string>
+    <string name="win_3">Your time is</string>
+    <string name="win_button_play_again">Play again</string>
+    <string name="win_button_save_scode">Save score</string>
+    <string name="win_button_back_to_menu">Back to menu</string>
+    <string name="toast_database_save_success">Successfully saved score</string>
 </resources>
