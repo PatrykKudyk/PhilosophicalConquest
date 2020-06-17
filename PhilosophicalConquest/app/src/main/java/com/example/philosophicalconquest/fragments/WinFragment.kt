@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,7 @@ class WinFragment : Fragment() {
     private lateinit var numberTextView: TextView
     private lateinit var timeTextView: TextView
     private lateinit var nickname: TextView
+    private lateinit var nicknameLayout: View
     private lateinit var saveScoreButton: Button
     private lateinit var playAgainButton: Button
     private lateinit var backToMenuButton: Button
@@ -104,6 +106,7 @@ class WinFragment : Fragment() {
         playAgainButton = rootView.findViewById(R.id.button_win_play_again)
         backToMenuButton = rootView.findViewById(R.id.button_win_back_to_menu)
         nickname = rootView.findViewById(R.id.win_text_input_nickname)
+        nicknameLayout = rootView.findViewById(R.id.win_text_layout_nickname)
         when (param1) {
             1 -> {
                 numberTextView.text = getString(R.string.win_short)
@@ -200,10 +203,13 @@ class WinFragment : Fragment() {
                    getString(R.string.toast_database_save_success),
                    Toast.LENGTH_SHORT
                ).show()
-               saveScoreButton.visibility = View.GONE
                nickname.text = ""
                nickname.clearFocus()
-               nickname.visibility = View.GONE
+               Handler().postDelayed({
+                   nickname.visibility = View.GONE
+                   saveScoreButton.visibility = View.GONE
+                   nicknameLayout.visibility = View.GONE
+               }, 200)
                db.close()
            } else {
                Toast.makeText(
