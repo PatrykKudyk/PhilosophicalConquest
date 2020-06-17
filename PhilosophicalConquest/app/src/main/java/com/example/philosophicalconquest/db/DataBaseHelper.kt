@@ -9,6 +9,7 @@ object TableInfo: BaseColumns {
     const val TABLE_NAME = "Highscores"
     const val TABLE_COLUMN_SCORE = "score"
     const val TABLE_COLUMN_TYPE = "type"
+    const val TABLE_COLUMN_NICK = "nick"
 }
 
 object BasicCommand {
@@ -16,7 +17,8 @@ object BasicCommand {
         "CREATE TABLE ${TableInfo.TABLE_NAME} (" +
                 "${BaseColumns._ID} INTEGER PRIMARY KEY," +
                 "${TableInfo.TABLE_COLUMN_SCORE} INTEGER NOT NULL," +
-                "${TableInfo.TABLE_COLUMN_TYPE} TEXT NOT NULL)"
+                "${TableInfo.TABLE_COLUMN_TYPE} TEXT NOT NULL," +
+                "${TableInfo.TABLE_COLUMN_NICK} TEXT NOT NULL)"
 
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS ${TableInfo.TABLE_NAME}"
 }

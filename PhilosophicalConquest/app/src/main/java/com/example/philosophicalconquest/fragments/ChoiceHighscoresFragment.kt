@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.example.philosophicalconquest.R
 
 
@@ -30,7 +31,9 @@ class ChoiceHighscoresFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-
+    private lateinit var shortGameButton: Button
+    private lateinit var mediumGameButton: Button
+    private lateinit var longGameButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,6 +86,44 @@ class ChoiceHighscoresFragment : Fragment() {
     }
 
     private fun initFragment() {
+        shortGameButton = rootView.findViewById(R.id.button_scores_short)
+        mediumGameButton = rootView.findViewById(R.id.button_scores_medium)
+        longGameButton = rootView.findViewById(R.id.button_scores_long)
 
+        shortGameButton.setOnClickListener {
+            val highscoresFragment = HighscoresFragment.newInstance(1)
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, highscoresFragment)
+                ?.commit()
+        }
+
+        mediumGameButton.setOnClickListener {
+            val highscoresFragment = HighscoresFragment.newInstance(2)
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, highscoresFragment)
+                ?.commit()
+        }
+
+        longGameButton.setOnClickListener {
+            val highscoresFragment = HighscoresFragment.newInstance(3)
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, highscoresFragment)
+                ?.commit()
+        }
     }
 }

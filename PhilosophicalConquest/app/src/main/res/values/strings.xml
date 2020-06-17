@@ -48,4 +48,7 @@
     <string name="win_button_save_scode">Save score</string>
     <string name="win_button_back_to_menu">Back to menu</string>
     <string name="toast_database_save_success">Successfully saved score</string>
+    <string name="toast_enter_nickname">Enter nickname</string>
+    <string name="hint_nickname">Nickname</string>
+    <string name="highscores_title">Highscores</string>
 </resources>
