@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="2dp"
-        android:background="@color/colorBackground"
+        android:background="@color/colorYellowLight"
         android:theme="@style/Theme.MaterialComponents.Light"
-        app:cardBackgroundColor="@color/colorBackground"
+        app:cardBackgroundColor="@color/colorYellowLight"
         app:cardCornerRadius="12dp"
         app:strokeColor="@color/colorBrown"
         app:strokeWidth="3dp">
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_margin="8dp"
-            android:background="@color/colorBackground">
+            android:background="@color/colorYellowLight">
 
             <TextView
                 android:id="@+id/cell_text_view_place"
