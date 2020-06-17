@@ -39,9 +39,12 @@
     <string name="philosophy_owned">Owned </string>
     <string name="win_1">Congratulations\n\n
         You have reached</string>
-    <string name="win_short">Until 1 000 000</string>
-    <string name="win_medium">Until 50 000 000</string>
-    <string name="win_long">Until 900 000 000</string>
+    <string name="choice_short_number">Until 1 000 000</string>
+    <string name="choice_medium_number">Until 50 000 000</string>
+    <string name="choice_long_number">Until 900 000 000</string>
+    <string name="win_short">1 000 000</string>
+    <string name="win_medium">50 000 000</string>
+    <string name="win_long">900 000 000</string>
     <string name="win_2">Philosophers</string>
     <string name="win_3">Your time is</string>
     <string name="win_button_play_again">Play again</string>

@@ -67,7 +67,7 @@
                 android:layout_weight="7"
                 android:fontFamily="@font/kingthingsregular"
                 android:gravity="center"
-                android:text="@string/win_short"
+                android:text="@string/choice_short_number"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -110,7 +110,7 @@
                 android:layout_weight="7"
                 android:fontFamily="@font/kingthingsregular"
                 android:gravity="center"
-                android:text="@string/win_medium"
+                android:text="@string/choice_medium_number"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -154,7 +154,7 @@
                 android:layout_weight="7"
                 android:fontFamily="@font/kingthingsregular"
                 android:gravity="center"
-                android:text="@string/win_long"
+                android:text="@string/choice_long_number"
                 android:textSize="16sp" />
 
         </LinearLayout>
