@@ -7,8 +7,8 @@
     tools:context=".fragments.WinFragment">
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fillViewport="true"
         tools:ignore="MissingConstraints">
 
@@ -28,7 +28,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.11"
+                    app:layout_constraintHeight_percent="0.2"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/archeologicaps"
                     android:gravity="center"
@@ -42,7 +42,7 @@
                     android:id="@+id/win_number_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.08"
+                    app:layout_constraintHeight_percent="0.1"
                     android:fontFamily="@font/kingthingsregular"
                     android:gravity="center"
                     android:text="1 000 000"
@@ -84,6 +84,7 @@
                     app:layout_constraintWidth_percent="0.5"
                     android:layout_height="0dp"
                     app:layout_constraintHeight_percent="0.08"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/archeologicaps"
                     android:gravity="center"
                     android:text="@string/win_3"
@@ -167,17 +168,21 @@
                     android:id="@+id/button_win_back_to_menu"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.07"
-                    app:layout_constraintWidth_percent="0.5"
                     android:layout_marginTop="25dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/button_background_medium"
                     android:fontFamily="@font/archeologicaps"
                     android:text="@string/win_button_back_to_menu"
                     android:textColor="@color/colorBlack"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.07"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button_win_play_again" />
+                    app:layout_constraintTop_toBottomOf="@+id/button_win_play_again"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_percent="0.5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
