@@ -431,7 +431,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_3"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -557,7 +557,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_4"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -682,7 +682,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_5"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -808,7 +808,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_6"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -934,7 +934,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_7"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -1060,7 +1060,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_8"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -1105,7 +1105,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="125dp"
                                 android:orientation="vertical"
-                                android:weightSum="100">
+                                android:weightSum="100"
+                                tools:ignore="MissingConstraints">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -1186,7 +1187,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_2"
+                                        android:id="@+id/philosophy_cell_owned_amount_9"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
