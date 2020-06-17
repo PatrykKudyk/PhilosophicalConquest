@@ -64,9 +64,9 @@
                             <TextView
                                 android:id="@+id/game_money_text_view"
                                 android:layout_width="0dp"
-                                android:layout_weight="60"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:layout_weight="60"
                                 android:fontFamily="@font/kingthingsregular"
                                 android:gravity="right"
                                 android:text="0"
@@ -76,18 +76,18 @@
                             <ImageView
                                 android:layout_width="0dp"
                                 android:layout_height="25dp"
-                                android:layout_weight="13"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginTop="4dp"
+                                android:layout_weight="13"
                                 android:src="@drawable/greek" />
 
                             <TextView
                                 android:id="@+id/game_time_text_view"
                                 android:layout_width="0dp"
-                                android:layout_weight="25"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:layout_weight="25"
                                 android:background="@drawable/button_background_light"
                                 android:fontFamily="@font/kingthingslight"
                                 android:gravity="center"
@@ -107,7 +107,7 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="75"
+                android:layout_weight="70"
                 android:background="@color/colorBackground">
 
                 <LinearLayout
@@ -246,18 +246,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_2" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="15"
@@ -265,10 +265,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -372,18 +372,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_3" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="60"
@@ -391,10 +391,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -498,18 +498,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_4" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="150"
@@ -517,10 +517,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -623,18 +623,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_5" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="650"
@@ -642,10 +642,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -658,8 +658,8 @@
                                     android:background="@color/colorPrimaryDark" />
 
                                 <TextView
-                                    android:layout_width="200dp"
-                                    android:layout_height="20dp"
+                                    android:layout_width="205dp"
+                                    android:layout_height="27dp"
                                     android:layout_gravity="center"
                                     android:fontFamily="@font/kingthingsregular"
                                     android:gravity="center"
@@ -749,18 +749,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_6" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="3 500"
@@ -768,10 +768,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -875,18 +875,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_7" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="20 000"
@@ -894,10 +894,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -1001,18 +1001,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_8" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="170 000"
@@ -1020,10 +1020,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -1128,18 +1128,18 @@
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="55"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_9" />
 
                                     <TextView
                                         android:layout_width="0dp"
-                                        android:layout_weight="21"
                                         android:layout_height="match_parent"
+                                        android:layout_weight="21"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="700 000"
@@ -1147,10 +1147,10 @@
 
                                     <ImageView
                                         android:layout_width="0dp"
-                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
                                         android:src="@drawable/greek" />
 
                                 </LinearLayout>
@@ -1215,36 +1215,67 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="10"
-                android:weightSum="10"
+                android:layout_weight="15"
                 android:background="@color/colorBrown"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="10">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="10"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="100">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"/>
+                        android:layout_weight="4" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:fontFamily="@font/kingthingsregular"
+                        android:gravity="center"
+                        android:text="Second income"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="24sp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/game_text_view_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:fontFamily="@font/kingthingsregular"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="22sp"
+
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="4" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="7"
-                        android:weightSum="10"
-                        android:gravity="center">
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:weightSum="10">
+
                         <Button
                             android:id="@+id/game_button_back"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="5"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="20dp"
+                            android:layout_weight="5"
                             android:background="@drawable/button_background_light"
                             android:fontFamily="@font/archeologicaps"
                             android:text="@string/game_button_back_to_menu" />
@@ -1253,9 +1284,7 @@
                     </LinearLayout>
 
 
-
                 </LinearLayout>
-
 
 
             </LinearLayout>
