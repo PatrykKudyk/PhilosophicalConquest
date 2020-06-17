@@ -14,82 +14,100 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="100">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="15"
                 android:background="@color/colorBrown"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/philosopher" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:weightSum="100">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/archeologicaps"
-                        android:text="@string/app_title_combined"
-                        android:textColor="@color/colorBackground"
-                        android:textSize="14sp" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="20"
+                        android:src="@drawable/philosopher" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_weight="75"
+                        android:orientation="vertical"
+                        android:weightSum="100">
 
                         <TextView
-                            android:id="@+id/game_money_text_view"
-                            android:layout_width="125dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="20dp"
-                            android:fontFamily="@font/kingthingsregular"
-                            android:gravity="right"
-                            android:text="0"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/archeologicaps"
+                            android:text="@string/app_title_combined"
                             android:textColor="@color/colorBackground"
-                            android:textSize="35sp" />
+                            android:textSize="14sp" />
 
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="4dp"
-                            android:src="@drawable/greek" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
 
-                        <TextView
-                            android:id="@+id/game_time_text_view"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/button_background_light"
-                            android:fontFamily="@font/kingthingslight"
-                            android:gravity="center"
-                            android:textColor="@color/colorBackground"
-                            android:textSize="35sp" />
+                            <TextView
+                                android:id="@+id/game_money_text_view"
+                                android:layout_width="0dp"
+                                android:layout_weight="60"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/kingthingsregular"
+                                android:gravity="right"
+                                android:text="0"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="35sp" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="13"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="4dp"
+                                android:src="@drawable/greek" />
+
+                            <TextView
+                                android:id="@+id/game_time_text_view"
+                                android:layout_width="0dp"
+                                android:layout_weight="25"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/button_background_light"
+                                android:fontFamily="@font/kingthingslight"
+                                android:gravity="center"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="35sp" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
                 </LinearLayout>
+
 
             </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="480dp"
+                android:layout_height="0dp"
+                android:layout_weight="75"
                 android:background="@color/colorBackground">
 
                 <LinearLayout
@@ -121,29 +139,34 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/philosopher" />
 
                                     <TextView
-                                        android:layout_width="250dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
+                                        android:layout_weight="80"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_1" />
@@ -199,27 +222,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/philosophy" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -227,15 +255,17 @@
                                         android:text="@string/philosophy_cell_2" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="15"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -318,27 +348,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/greek3" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -346,15 +381,17 @@
                                         android:text="@string/philosophy_cell_3" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="60"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -394,7 +431,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_3"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -437,27 +474,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/greek2" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -465,15 +507,17 @@
                                         android:text="@string/philosophy_cell_4" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="150"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -513,7 +557,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_4"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -528,7 +572,6 @@
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
                     </com.google.android.material.card.MaterialCardView>
 
@@ -556,27 +599,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/roman" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -584,15 +632,17 @@
                                         android:text="@string/philosophy_cell_5" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="650"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -632,7 +682,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_5"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -675,27 +725,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/museum" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -703,15 +758,17 @@
                                         android:text="@string/philosophy_cell_6" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="3 500"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -751,7 +808,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_6"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -794,27 +851,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/forum" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -822,15 +884,17 @@
                                         android:text="@string/philosophy_cell_7" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="20 000"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -870,7 +934,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_7"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -913,27 +977,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/library" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -941,15 +1010,17 @@
                                         android:text="@string/philosophy_cell_8" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="170 000"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -989,7 +1060,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_8"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -1032,27 +1103,32 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_height="125dp"
+                                android:orientation="vertical"
+                                android:weightSum="100">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="60dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="100"
                                     android:orientation="horizontal"
+                                    android:weightSum="100"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:layout_width="60dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="20"
                                         android:background="@drawable/button_background_light"
                                         android:src="@drawable/school" />
 
                                     <TextView
-                                        android:layout_width="190dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="55"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
                                         android:fontFamily="@font/archeologicaps"
@@ -1060,15 +1136,17 @@
                                         android:text="@string/philosophy_cell_9" />
 
                                     <TextView
-                                        android:layout_width="70dp"
-                                        android:layout_height="60dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="21"
+                                        android:layout_height="match_parent"
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="700 000"
                                         android:textSize="26sp" />
 
                                     <ImageView
-                                        android:layout_width="17dp"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4"
                                         android:layout_height="17dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
@@ -1108,7 +1186,7 @@
                                         android:textSize="12sp" />
 
                                     <TextView
-                                        android:id="@+id/philosophy_cell_owned_amount_9"
+                                        android:id="@+id/philosophy_cell_owned_amount_2"
                                         android:layout_width="60dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="top"
@@ -1135,19 +1213,48 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:weightSum="10"
                 android:background="@color/colorBrown"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/game_button_back"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/button_background_light"
-                    android:fontFamily="@font/archeologicaps"
-                    android:text="@string/game_button_back_to_menu" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="10"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="7"
+                        android:weightSum="10"
+                        android:gravity="center">
+                        <Button
+                            android:id="@+id/game_button_back"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/button_background_light"
+                            android:fontFamily="@font/archeologicaps"
+                            android:text="@string/game_button_back_to_menu" />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
