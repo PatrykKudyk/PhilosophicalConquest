@@ -356,7 +356,7 @@ class GameFragment : Fragment() {
                 return true
             }
         } else if (param1 as Int == 3) {
-            if (money >= 300000000) {
+            if (money >= 900000000) {
                 val winFragment = WinFragment.newInstance(param1 as Int, time)
                 fragmentManager
                     ?.beginTransaction()
