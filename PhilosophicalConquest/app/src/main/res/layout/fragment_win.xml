@@ -1,14 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.WinFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackground">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.2"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/archeologicaps"
+                    android:gravity="center"
+                    android:text="@string/win_1"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/win_number_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.1"
+                    android:fontFamily="@font/kingthingsregular"
+                    android:gravity="center"
+                    android:text="1 000 000"
+                    android:textSize="60sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.08"
+                    android:fontFamily="@font/archeologicaps"
+                    android:gravity="center"
+                    android:text="@string/win_2"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/win_number_text_view" />
+
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.25"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.08"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/archeologicaps"
+                    android:gravity="center"
+                    android:text="@string/win_3"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/win_time_text_view"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.08"
+                    android:fontFamily="@font/kingthingsregular"
+                    android:gravity="center"
+                    android:text="3:41"
+                    android:textSize="40sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/win_text_layout_nickname"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.08"
+                    android:layout_marginTop="10dp"
+                    app:boxStrokeColor="@color/colorPrimaryDark"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/win_time_text_view">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/win_text_input_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="60dp"
+                        android:fontFamily="@font/kingthingsregular"
+                        android:hint="@string/hint_nickname"
+                        android:inputType="text"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="22sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button_win_save_score"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.07"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:background="@drawable/button_background_light"
+                    android:fontFamily="@font/archeologicaps"
+                    android:text="@string/win_button_save_scode"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/win_text_layout_nickname" />
+
+                <Button
+                    android:id="@+id/button_win_play_again"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.07"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_backgroumd_dark"
+                    android:fontFamily="@font/archeologicaps"
+                    android:text="@string/win_button_play_again"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_win_save_score" />
+
+                <Button
+                    android:id="@+id/button_win_back_to_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/button_background_medium"
+                    android:fontFamily="@font/archeologicaps"
+                    android:text="@string/win_button_back_to_menu"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.07"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_win_play_again"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_percent="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
