@@ -50,4 +50,5 @@
     <string name="toast_database_save_success">Successfully saved score</string>
     <string name="toast_enter_nickname">Enter nickname</string>
     <string name="hint_nickname">Nickname</string>
+    <string name="highscores_title">Highscores</string>
 </resources>

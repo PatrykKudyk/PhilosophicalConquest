@@ -19,14 +19,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:layout_margin="8dp"
             android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/cell_text_view_place"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/kingthingsregular"
                 android:gravity="center"
@@ -34,12 +34,14 @@
                 android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.2" />
 
             <TextView
                 android:id="@+id/cell_text_view_time"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.25"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/kingthingsregular"
                 android:gravity="center"
@@ -51,12 +53,13 @@
 
             <TextView
                 android:id="@+id/cell_text_view_name"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/kingthingsregular"
-                android:gravity="center"
-                android:text="Partycjusz"
-                android:textSize="35sp"
+                android:gravity="start|center_vertical"
+                android:text="Patrycjusz"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cell_text_view_time"
                 app:layout_constraintTop_toTopOf="parent" />

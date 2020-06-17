@@ -204,6 +204,7 @@ class WinFragment : Fragment() {
                nickname.text = ""
                nickname.clearFocus()
                nickname.visibility = View.GONE
+               db.close()
            } else {
                Toast.makeText(
                    rootView.context,

@@ -7,7 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
+import com.example.philosophicalconquest.db.DataBaseHelper
+import com.example.philosophicalconquest.db.TableInfo
+import com.example.philosophicalconquest.models.Score
+import com.example.philosophicalconquest.recycler.HighscoresAdapter
+import com.example.philosophicalconquest.recycler.MarginItemDecoration
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,7 +39,7 @@ class HighscoresFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +93,60 @@ class HighscoresFragment : Fragment() {
     }
 
     private fun initFragment() {
+        recyclerView = rootView.findViewById(R.id.high_scores_recycler_view)
 
+        val mLayoutManager: LinearLayoutManager = LinearLayoutManager(this.context)
+        recyclerView.layoutManager = mLayoutManager
+
+        recyclerView.addItemDecoration(
+            MarginItemDecoration(
+                12
+            )
+        )
+        var scoresList = ArrayList<Score>()
+        val dbHelper = DataBaseHelper(rootView.context)
+        val db = dbHelper.readableDatabase
+        val selectQuery = "Select * from ${TableInfo.TABLE_NAME}"
+        val result = db.rawQuery(selectQuery, null)
+        if (result.moveToFirst()) {
+            do {
+                var score: Score
+                score = Score(result.getString(result.getColumnIndex(TableInfo.TABLE_COLUMN_SCORE)).toInt(),
+                    result.getString(result.getColumnIndex(TableInfo.TABLE_COLUMN_TYPE)),
+                    result.getString(result.getColumnIndex(TableInfo.TABLE_COLUMN_NICK)))
+                scoresList.add(score)
+            } while (result.moveToNext())
+        }
+        result.close()
+        db.close()
+        when (param1 as Int) {
+            1 -> {
+                val list = ArrayList<Score>()
+                for (score in scoresList){
+                    if(score.type == "short"){
+                        list.add(score)
+                    }
+                }
+                recyclerView.adapter = HighscoresAdapter(list.sortedBy { it.time }, 1)
+            }
+            2 -> {
+                val list = ArrayList<Score>()
+                for (score in scoresList){
+                    if(score.type == "medium"){
+                        list.add(score)
+                    }
+                }
+                recyclerView.adapter = HighscoresAdapter(list.sortedBy { it.time }, 2)
+            }
+            3 -> {
+                val list = ArrayList<Score>()
+                for (score in scoresList){
+                    if(score.type == "long"){
+                        list.add(score)
+                    }
+                }
+                recyclerView.adapter = HighscoresAdapter(list.sortedBy { it.time }, 3)
+            }
+        }
     }
 }
