@@ -63,6 +63,7 @@ class GameFragment : Fragment() {
     private lateinit var owned9: TextView
     private lateinit var incomePlus: TextView
     private lateinit var incomeMinus: TextView
+    private lateinit var incomeTextView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -122,6 +123,7 @@ class GameFragment : Fragment() {
         moneyTextView = rootView.findViewById(R.id.game_money_text_view)
         incomePlus = rootView.findViewById(R.id.game_income_plus)
         incomeMinus = rootView.findViewById(R.id.game_income_minus)
+        incomeTextView = rootView.findViewById(R.id.game_text_view_income)
 
         initCardViews()
         backToMenuButton.setOnClickListener {
@@ -170,6 +172,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 15)
                 ownedArray[1]++
                 owned2.text = ownedArray[1].toString()
+                updateIncome()
             }
         }
         cardView3.setOnClickListener {
@@ -177,6 +180,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 60)
                 ownedArray[2]++
                 owned3.text = ownedArray[2].toString()
+                updateIncome()
             }
         }
         cardView4.setOnClickListener {
@@ -184,6 +188,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 150)
                 ownedArray[3]++
                 owned4.text = ownedArray[3].toString()
+                updateIncome()
             }
         }
         cardView5.setOnClickListener {
@@ -191,6 +196,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 650)
                 ownedArray[4]++
                 owned5.text = ownedArray[4].toString()
+                updateIncome()
             }
         }
         cardView6.setOnClickListener {
@@ -198,6 +204,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 3500)
                 ownedArray[5]++
                 owned6.text = ownedArray[5].toString()
+                updateIncome()
             }
         }
         cardView7.setOnClickListener {
@@ -205,6 +212,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 20000)
                 ownedArray[6]++
                 owned7.text = ownedArray[6].toString()
+                updateIncome()
             }
         }
         cardView8.setOnClickListener {
@@ -212,6 +220,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 170000)
                 ownedArray[7]++
                 owned8.text = ownedArray[7].toString()
+                updateIncome()
             }
         }
         cardView9.setOnClickListener {
@@ -219,6 +228,7 @@ class GameFragment : Fragment() {
                 updateMoney(false, 700000)
                 ownedArray[8]++
                 owned9.text = ownedArray[8].toString()
+                updateIncome()
             }
         }
     }
@@ -230,6 +240,7 @@ class GameFragment : Fragment() {
             override fun run() {
                 updateClock()
                 addMoney()
+                updateIncome()
                 isEnd()
                 mainHandler.postDelayed(this, 1000)
             }
@@ -237,7 +248,7 @@ class GameFragment : Fragment() {
     }
 
     private fun updateMoney(add: Boolean, moneyToAdd: Int) {
-        if(add) {
+        if (add) {
             money += moneyToAdd
 //            formatMoneyTextView()
             moneyTextView.text = money.toString()
@@ -262,7 +273,7 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun formatMoneyTextView(){
+    private fun formatMoneyTextView() {
 
 
 //        if(money < 1000) {
@@ -295,57 +306,69 @@ class GameFragment : Fragment() {
         val income = (ownedArray[1] +
                 ownedArray[2] * 5 +
                 ownedArray[3] * 25 +
-                ownedArray[4]*100 +
-                ownedArray[5]*500 +
-                ownedArray[6]*2000 +
-                ownedArray[7]*10000 +
-                ownedArray[8]*60000)
-        if (income != 0){
+                ownedArray[4] * 100 +
+                ownedArray[5] * 500 +
+                ownedArray[6] * 2000 +
+                ownedArray[7] * 10000 +
+                ownedArray[8] * 60000)
+        if (income != 0) {
             updateMoney(true, income)
         }
     }
 
+    private fun updateIncome() {
+        val income = (ownedArray[1] +
+                ownedArray[2] * 5 +
+                ownedArray[3] * 25 +
+                ownedArray[4] * 100 +
+                ownedArray[5] * 500 +
+                ownedArray[6] * 2000 +
+                ownedArray[7] * 10000 +
+                ownedArray[8] * 60000)
+        incomeTextView.text = income.toString()
+    }
+
     private fun isEnd(): Boolean {
-       if(param1 as Int == 1) {
-           if (money >= 1000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int, time)
-               fragmentManager
-                   ?.beginTransaction()
-                   ?.setCustomAnimations(
-                       R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                       R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                   )
-                   ?.replace(R.id.frame_layout, winFragment)
-                   ?.commit()
-               return true
-           }
-       } else if (param1 as Int == 2){
-           if (money >= 50000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int, time)
-               fragmentManager
-                   ?.beginTransaction()
-                   ?.setCustomAnimations(
-                       R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                       R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                   )
-                   ?.replace(R.id.frame_layout, winFragment)
-                   ?.commit()
-               return true
-           }
-       } else if (param1 as Int == 3) {
-           if (money >= 300000000) {
-               val winFragment = WinFragment.newInstance(param1 as Int, time)
-               fragmentManager
-                   ?.beginTransaction()
-                   ?.setCustomAnimations(
-                       R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                       R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                   )
-                   ?.replace(R.id.frame_layout, winFragment)
-                   ?.commit()
-               return true
-           }
-       }
+        if (param1 as Int == 1) {
+            if (money >= 1000000) {
+                val winFragment = WinFragment.newInstance(param1 as Int, time)
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, winFragment)
+                    ?.commit()
+                return true
+            }
+        } else if (param1 as Int == 2) {
+            if (money >= 50000000) {
+                val winFragment = WinFragment.newInstance(param1 as Int, time)
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, winFragment)
+                    ?.commit()
+                return true
+            }
+        } else if (param1 as Int == 3) {
+            if (money >= 300000000) {
+                val winFragment = WinFragment.newInstance(param1 as Int, time)
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, winFragment)
+                    ?.commit()
+                return true
+            }
+        }
         return false
     }
 }
