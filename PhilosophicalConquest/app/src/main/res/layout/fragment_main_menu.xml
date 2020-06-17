@@ -28,7 +28,7 @@
             android:fontFamily="@font/archeologicaps"
             android:gravity="center"
             android:text="@string/app_title_1"
-            android:textSize="30sp" />
+            android:textSize="30dip" />
 
         <TextView
             android:id="@+id/textView"
@@ -40,7 +40,7 @@
             android:fontFamily="@font/archeologicaps"
             android:gravity="center"
             android:text="@string/app_title_2"
-            android:textSize="40sp"
+            android:textSize="40dip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
                 android:fontFamily="@font/archeologicaps"
                 android:text="@string/menu_new_game"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp"
+                android:textSize="18dip"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -96,7 +96,7 @@
                 android:background="@drawable/button_backgroumd_dark"
                 android:textColor="@color/colorBlack"
                 android:text="@string/menu_high_scores"
-                android:textSize="18sp"
+                android:textSize="18dip"
                 android:fontFamily="@font/archeologicaps"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +125,7 @@
                 android:background="@drawable/button_background_medium"
                 android:textColor="@color/colorBlack"
                 android:text="@string/menu_rules"
-                android:textSize="18sp"
+                android:textSize="18dip"
                 android:fontFamily="@font/archeologicaps"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

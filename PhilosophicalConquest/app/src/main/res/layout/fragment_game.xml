@@ -53,7 +53,7 @@
                             android:fontFamily="@font/archeologicaps"
                             android:text="@string/app_title_combined"
                             android:textColor="@color/colorBackground"
-                            android:textSize="14sp" />
+                            android:textSize="14dip" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                                 android:gravity="right"
                                 android:text="0"
                                 android:textColor="@color/colorBackground"
-                                android:textSize="35sp" />
+                                android:textSize="35dip" />
 
                             <ImageView
                                 android:layout_width="0dp"
@@ -92,7 +92,7 @@
                                 android:fontFamily="@font/kingthingslight"
                                 android:gravity="center"
                                 android:textColor="@color/colorBackground"
-                                android:textSize="35sp" />
+                                android:textSize="35dip" />
 
                         </LinearLayout>
 
@@ -261,7 +261,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="15"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -302,7 +302,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_2"
@@ -312,7 +312,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -387,7 +387,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="60"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -428,7 +428,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_3"
@@ -438,7 +438,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -513,7 +513,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="150"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -554,7 +554,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_4"
@@ -564,7 +564,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -638,7 +638,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="650"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -679,7 +679,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_5"
@@ -689,7 +689,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -764,7 +764,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="3 500"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -805,7 +805,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_6"
@@ -815,7 +815,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -890,7 +890,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="20 000"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -931,7 +931,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_7"
@@ -941,7 +941,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -1016,7 +1016,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="170 000"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -1057,7 +1057,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_8"
@@ -1067,7 +1067,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -1143,7 +1143,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="right|center"
                                         android:text="700 000"
-                                        android:textSize="26sp" />
+                                        android:textSize="26dip" />
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -1184,7 +1184,7 @@
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center"
                                         android:text="@string/philosophy_owned"
-                                        android:textSize="12sp" />
+                                        android:textSize="12dip" />
 
                                     <TextView
                                         android:id="@+id/philosophy_cell_owned_amount_9"
@@ -1194,7 +1194,7 @@
                                         android:fontFamily="@font/kingthingsregular"
                                         android:gravity="top"
                                         android:text="0"
-                                        android:textSize="20sp" />
+                                        android:textSize="20dip" />
                                 </LinearLayout>
 
 
@@ -1240,7 +1240,7 @@
                         android:gravity="center"
                         android:text="Second income"
                         android:textColor="@color/colorBackground"
-                        android:textSize="24sp"
+                        android:textSize="24dip"
 
                         />
 
@@ -1253,7 +1253,7 @@
                         android:gravity="center"
                         android:text="0"
                         android:textColor="@color/colorBackground"
-                        android:textSize="22sp"
+                        android:textSize="22dip"
 
                         />
 
@@ -1303,7 +1303,7 @@
             android:gravity="right"
             android:text="-2000"
             android:textColor="@color/colorYellowMedium"
-            android:textSize="26sp"
+            android:textSize="26dip"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -1321,7 +1321,7 @@
             android:gravity="right"
             android:text="\+2000"
             android:textColor="@color/colorYellowMedium"
-            android:textSize="26sp"
+            android:textSize="26dip"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

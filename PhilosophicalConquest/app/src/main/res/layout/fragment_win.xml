@@ -33,7 +33,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:gravity="center"
                     android:text="@string/win_1"
-                    android:textSize="20sp"
+                    android:textSize="20dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +46,7 @@
                     android:fontFamily="@font/kingthingsregular"
                     android:gravity="center"
                     android:text="1 000 000"
-                    android:textSize="60sp"
+                    android:textSize="60dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -59,7 +59,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:gravity="center"
                     android:text="@string/win_2"
-                    android:textSize="22sp"
+                    android:textSize="22dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/win_number_text_view" />
@@ -88,7 +88,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:gravity="center"
                     android:text="@string/win_3"
-                    android:textSize="22sp"
+                    android:textSize="22dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -102,7 +102,7 @@
                     android:fontFamily="@font/kingthingsregular"
                     android:gravity="center"
                     android:text="3:41"
-                    android:textSize="40sp"
+                    android:textSize="40dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -130,7 +130,7 @@
                         android:hint="@string/hint_nickname"
                         android:inputType="text"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="22sp" />
+                        android:textSize="22dip" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -143,7 +143,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:text="@string/win_button_save_scode"
                     android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
+                    android:textSize="18dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/win_text_layout_nickname" />
@@ -159,7 +159,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:text="@string/win_button_play_again"
                     android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
+                    android:textSize="18dip"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_win_save_score" />
@@ -174,7 +174,7 @@
                     android:fontFamily="@font/archeologicaps"
                     android:text="@string/win_button_back_to_menu"
                     android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
+                    android:textSize="18dip"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHeight_percent="0.07"

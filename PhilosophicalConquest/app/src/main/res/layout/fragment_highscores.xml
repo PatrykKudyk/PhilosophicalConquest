@@ -22,7 +22,7 @@
             android:fontFamily="@font/archeologicaps"
             android:gravity="center"
             android:text="@string/highscores_title"
-            android:textSize="30sp"
+            android:textSize="30dip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.13"
             app:layout_constraintStart_toStartOf="parent"
