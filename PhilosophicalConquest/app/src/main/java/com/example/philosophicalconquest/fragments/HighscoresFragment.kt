@@ -7,7 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
+import com.example.philosophicalconquest.db.DataBaseHelper
+import com.example.philosophicalconquest.db.TableInfo
+import com.example.philosophicalconquest.models.Score
+import com.example.philosophicalconquest.recycler.HighscoresAdapter
+import com.example.philosophicalconquest.recycler.MarginItemDecoration
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,7 +37,7 @@ class HighscoresFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +91,31 @@ class HighscoresFragment : Fragment() {
     }
 
     private fun initFragment() {
+        recyclerView = rootView.findViewById(R.id.high_scores_recycler_view)
 
+        val mLayoutManager: LinearLayoutManager = LinearLayoutManager(this.context)
+        recyclerView.layoutManager = mLayoutManager
+
+        recyclerView.addItemDecoration(
+            MarginItemDecoration(
+                12
+            )
+        )
+        val dbHelper = DataBaseHelper(rootView.context)
+        val db = dbHelper.readableDatabase
+        when(param1 as Int) {
+            1 -> {
+                val scores = db.execSQL("Select * FROM ${TableInfo.TABLE_NAME} WHERE ${TableInfo.TABLE_COLUMN_TYPE} = short") as Array<Score>
+                recyclerView.adapter = HighscoresAdapter(scores,1)
+            }
+            2 -> {
+                val scores = db.execSQL("Select * FROM ${TableInfo.TABLE_NAME} WHERE ${TableInfo.TABLE_COLUMN_TYPE} = medium") as Array<Score>
+                recyclerView.adapter = HighscoresAdapter(scores,2)
+            }
+            3 -> {
+                val scores = db.execSQL("Select * FROM ${TableInfo.TABLE_NAME} WHERE ${TableInfo.TABLE_COLUMN_TYPE} = long") as Array<Score>
+                recyclerView.adapter = HighscoresAdapter(scores,3)
+            }
+        }
     }
 }

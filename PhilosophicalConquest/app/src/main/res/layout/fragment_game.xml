@@ -11,8 +11,6 @@
         android:layout_height="match_parent"
         android:background="@color/colorBackground">
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,7 +18,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorBrown"
                 android:orientation="horizontal">
 
@@ -45,7 +43,7 @@
                         android:fontFamily="@font/archeologicaps"
                         android:text="@string/app_title_combined"
                         android:textColor="@color/colorBackground"
-                        android:textSize="18sp" />
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -54,7 +52,7 @@
 
                         <TextView
                             android:id="@+id/game_money_text_view"
-                            android:layout_width="150dp"
+                            android:layout_width="125dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginStart="20dp"
@@ -142,7 +140,7 @@
                                         android:src="@drawable/philosopher" />
 
                                     <TextView
-                                        android:layout_width="300dp"
+                                        android:layout_width="250dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -220,7 +218,7 @@
                                         android:src="@drawable/philosophy" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -339,7 +337,7 @@
                                         android:src="@drawable/greek3" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -458,7 +456,7 @@
                                         android:src="@drawable/greek2" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -577,7 +575,7 @@
                                         android:src="@drawable/roman" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -696,7 +694,7 @@
                                         android:src="@drawable/museum" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -815,7 +813,7 @@
                                         android:src="@drawable/forum" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -934,7 +932,7 @@
                                         android:src="@drawable/library" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -1053,7 +1051,7 @@
                                         android:src="@drawable/school" />
 
                                     <TextView
-                                        android:layout_width="220dp"
+                                        android:layout_width="190dp"
                                         android:layout_height="60dp"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
@@ -1162,17 +1160,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="62dp"
+            android:layout_marginEnd="60dp"
             android:fontFamily="@font/kingthingslight"
             android:gravity="right"
             android:text="-2000"
-            android:visibility="invisible"
-            android:layout_marginTop="62dp"
-            android:layout_marginEnd="60dp"
             android:textColor="@color/colorYellowMedium"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="26sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="26sp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/game_income_plus"
@@ -1180,17 +1178,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="60dp"
             android:fontFamily="@font/kingthingslight"
             android:gravity="right"
             android:text="\+2000"
-            android:visibility="invisible"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="60dp"
             android:textColor="@color/colorYellowMedium"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="26sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="26sp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

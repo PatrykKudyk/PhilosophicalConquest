@@ -5,9 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
+import com.example.philosophicalconquest.models.Score
+import kotlinx.android.synthetic.main.cell_highscore.view.*
+import kotlinx.android.synthetic.main.fragment_win.view.*
 
 
-class HighscoresAdapter(val highscores: Array<Int>, val type: Int) :
+class HighscoresAdapter(val highscores: Array<Score>, val type: Int) :
     RecyclerView.Adapter<HighscoresViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HighscoresViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,7 +23,9 @@ class HighscoresAdapter(val highscores: Array<Int>, val type: Int) :
     }
 
     override fun onBindViewHolder(holder: HighscoresViewHolder, position: Int) {
-        
+        holder.view.cell_text_view_place.text = position.toString() +"."
+//        holder.view.cell_text_view_time.text = highscores[position].time
+        holder.view.cell_text_view_name.text = highscores[position].nick
     }
 
 }
