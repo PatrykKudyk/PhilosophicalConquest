@@ -4,16 +4,16 @@ Here is the view of the app:
 
 ![main menu](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/1.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/2.png)
+![rules](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/2.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/8.png)
+![game choice](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/8.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/3.png)
+![game](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/3.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/4.png)
+![game](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/4.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/5.png)
+![win](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/5.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/6.png)
+![win2](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/6.png)
 
-![alt text](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/7.png)
+![high scores](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/7.png)
