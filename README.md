@@ -2,7 +2,7 @@ PhilosophicalConquest is a simple game in which you have to gain as much philoso
 
 Here is the view of the app:
 
-![main menu](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/1.png)
+![main menu](blob/master/zdjecia/1.png)
 
 ![rules](https://github.com/PatrykKudyk/PhilosophicalConquest/tree/master/zdjecia/2.png)
 
