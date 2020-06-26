@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity(),
     GameFragment.OnFragmentInteractionListener,
     HighscoresFragment.OnFragmentInteractionListener,
     RulesFragment.OnFragmentInteractionListener,
-    WinFragment.OnFragmentInteractionListener {
+    WinFragment.OnFragmentInteractionListener,
+    CreditsFragment.OnFragmentInteractionListener {
 
     lateinit var mainMenuFragment: MainMenuFragment
 

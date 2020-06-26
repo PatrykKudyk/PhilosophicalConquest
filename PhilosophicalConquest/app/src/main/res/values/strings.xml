@@ -6,6 +6,7 @@
     <string name="menu_new_game">New Game</string>
     <string name="menu_rules">Rules</string>
     <string name="menu_high_scores">Highscores</string>
+    <string name="menu_credits">Credits</string>
     <string name="choice_short">Short</string>
     <string name="choice_medium">Medium</string>
     <string name="choice_long">Long</string>
@@ -54,4 +55,7 @@
     <string name="toast_enter_nickname">Enter nickname</string>
     <string name="hint_nickname">Nickname</string>
     <string name="highscores_title">Highscores</string>
+    <string name="credits_title">Credits</string>
+    <string name="credits_app_author">App was made by Patryk Kudyk</string>
+    <string name="credits_icons_author">Icons made by Freepik from flaticon.com</string>
 </resources>
