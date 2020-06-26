@@ -113,7 +113,8 @@ class WinFragment : Fragment() {
 
         MobileAds.initialize(rootView.context)
         mInterstitialAd = InterstitialAd(rootView.context)
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+//        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-1626761492159766/6500258429"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         var playPressed = true
@@ -205,7 +206,7 @@ class WinFragment : Fragment() {
             }
 
             override fun onAdClosed() {
-                if (playPressed){
+                if (playPressed) {
                     when (param1) {
                         1 -> {
                             val gameFragment = GameFragment.newInstance(1)
