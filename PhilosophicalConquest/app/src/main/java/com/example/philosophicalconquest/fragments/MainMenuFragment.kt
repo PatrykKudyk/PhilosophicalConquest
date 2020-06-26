@@ -34,6 +34,7 @@ class MainMenuFragment : Fragment() {
     private lateinit var newGameButton: Button
     private lateinit var rulesButton: Button
     private lateinit var highscoresButton: Button
+    private lateinit var creditsButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,6 +90,7 @@ class MainMenuFragment : Fragment() {
         newGameButton = rootView.findViewById(R.id.button_menu_new_game)
         rulesButton = rootView.findViewById(R.id.button_menu_rules)
         highscoresButton = rootView.findViewById(R.id.button_menu_high_scores)
+        creditsButton = rootView.findViewById(R.id.button_menu_credits)
 
         newGameButton.setOnClickListener {
             val choiceGameFragment = ChoiceGameFragment.newInstance()
@@ -99,7 +101,7 @@ class MainMenuFragment : Fragment() {
                     R.anim.enter_right_to_left, R.anim.exit_left_to_right
                 )
                 ?.replace(R.id.frame_layout, choiceGameFragment)
-                ?.addToBackStack(choiceGameFragment.toString())
+                ?.addToBackStack(ChoiceGameFragment.toString())
                 ?.commit()
         }
 
@@ -112,7 +114,7 @@ class MainMenuFragment : Fragment() {
                     R.anim.enter_right_to_left, R.anim.exit_left_to_right
                 )
                 ?.replace(R.id.frame_layout, rulesFragment)
-                ?.addToBackStack(rulesFragment.toString())
+                ?.addToBackStack(RulesFragment.toString())
                 ?.commit()
         }
 
@@ -125,7 +127,20 @@ class MainMenuFragment : Fragment() {
                     R.anim.enter_right_to_left, R.anim.exit_left_to_right
                 )
                 ?.replace(R.id.frame_layout, choiceHighscoresFragment)
-                ?.addToBackStack(choiceHighscoresFragment.toString())
+                ?.addToBackStack(ChoiceHighscoresFragment.toString())
+                ?.commit()
+        }
+
+        creditsButton.setOnClickListener {
+            val creditsFragment = CreditsFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, creditsFragment)
+                ?.addToBackStack(CreditsFragment.toString())
                 ?.commit()
         }
     }
