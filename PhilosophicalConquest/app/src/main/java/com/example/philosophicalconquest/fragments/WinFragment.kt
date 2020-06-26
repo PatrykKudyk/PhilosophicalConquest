@@ -12,11 +12,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.example.philosophicalconquest.R
 import com.example.philosophicalconquest.db.DataBaseHelper
 import com.example.philosophicalconquest.db.TableInfo
-import kotlinx.android.synthetic.main.fragment_win.view.*
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,6 +48,7 @@ class WinFragment : Fragment() {
     private lateinit var saveScoreButton: Button
     private lateinit var playAgainButton: Button
     private lateinit var backToMenuButton: Button
+    private lateinit var mInterstitialAd: InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,6 +110,14 @@ class WinFragment : Fragment() {
         backToMenuButton = rootView.findViewById(R.id.button_win_back_to_menu)
         nickname = rootView.findViewById(R.id.win_text_input_nickname)
         nicknameLayout = rootView.findViewById(R.id.win_text_layout_nickname)
+
+        MobileAds.initialize(rootView.context)
+        mInterstitialAd = InterstitialAd(rootView.context)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        var playPressed = true
+
         when (param1) {
             1 -> {
                 numberTextView.text = getString(R.string.win_short)
@@ -130,94 +141,163 @@ class WinFragment : Fragment() {
         }
 
         playAgainButton.setOnClickListener {
-            when (param1) {
-                1 -> {
-                    val gameFragment = GameFragment.newInstance(1)
-                    fragmentManager
-                        ?.beginTransaction()
-                        ?.setCustomAnimations(
-                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                        )
-                        ?.replace(R.id.frame_layout, gameFragment)
-                        ?.commit()
-                }
-                2 -> {
-                    val gameFragment = GameFragment.newInstance(2)
-                    fragmentManager
-                        ?.beginTransaction()
-                        ?.setCustomAnimations(
-                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                        )
-                        ?.replace(R.id.frame_layout, gameFragment)
-                        ?.commit()
-                }
-                3 -> {
-                    val gameFragment = GameFragment.newInstance(3)
-                    fragmentManager
-                        ?.beginTransaction()
-                        ?.setCustomAnimations(
-                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                        )
-                        ?.replace(R.id.frame_layout, gameFragment)
-                        ?.commit()
+            playPressed = true
+            if (mInterstitialAd.isLoaded) {
+                mInterstitialAd.show()
+            } else {
+                when (param1) {
+                    1 -> {
+                        val gameFragment = GameFragment.newInstance(1)
+                        fragmentManager
+                            ?.beginTransaction()
+                            ?.setCustomAnimations(
+                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                            )
+                            ?.replace(R.id.frame_layout, gameFragment)
+                            ?.commit()
+                    }
+                    2 -> {
+                        val gameFragment = GameFragment.newInstance(2)
+                        fragmentManager
+                            ?.beginTransaction()
+                            ?.setCustomAnimations(
+                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                            )
+                            ?.replace(R.id.frame_layout, gameFragment)
+                            ?.commit()
+                    }
+                    3 -> {
+                        val gameFragment = GameFragment.newInstance(3)
+                        fragmentManager
+                            ?.beginTransaction()
+                            ?.setCustomAnimations(
+                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                            )
+                            ?.replace(R.id.frame_layout, gameFragment)
+                            ?.commit()
+                    }
                 }
             }
         }
 
+        mInterstitialAd.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdFailedToLoad(errorCode: Int) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            override fun onAdClosed() {
+                if (playPressed){
+                    when (param1) {
+                        1 -> {
+                            val gameFragment = GameFragment.newInstance(1)
+                            fragmentManager
+                                ?.beginTransaction()
+                                ?.setCustomAnimations(
+                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                                )
+                                ?.replace(R.id.frame_layout, gameFragment)
+                                ?.commit()
+                        }
+                        2 -> {
+                            val gameFragment = GameFragment.newInstance(2)
+                            fragmentManager
+                                ?.beginTransaction()
+                                ?.setCustomAnimations(
+                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                                )
+                                ?.replace(R.id.frame_layout, gameFragment)
+                                ?.commit()
+                        }
+                        3 -> {
+                            val gameFragment = GameFragment.newInstance(3)
+                            fragmentManager
+                                ?.beginTransaction()
+                                ?.setCustomAnimations(
+                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                                )
+                                ?.replace(R.id.frame_layout, gameFragment)
+                                ?.commit()
+                        }
+                    }
+                } else {
+                    fragmentManager
+                        ?.popBackStack()
+                }
+            }
+        }
+
+
         backToMenuButton.setOnClickListener {
-            val menuFragment = MainMenuFragment.newInstance()
-            fragmentManager
-                ?.beginTransaction()
-                ?.setCustomAnimations(
-                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                )
-                ?.replace(R.id.frame_layout, menuFragment)
-                ?.commit()
+            playPressed = false
+            if (mInterstitialAd.isLoaded) {
+                mInterstitialAd.show()
+            } else {
+                fragmentManager
+                    ?.popBackStack()
+            }
         }
 
         saveScoreButton.setOnClickListener {
-           if(nickname.text.toString() != ""){
-               val dbHelper = DataBaseHelper(rootView.context)
-               val db = dbHelper.writableDatabase
-               val value = ContentValues()
-               value.put("score", param2 as Int)
-               when (param1 as Int) {
-                   1 -> {
-                       value.put("type", "short")
-                   }
-                   2 -> {
-                       value.put("type", "medium")
-                   }
-                   3 -> {
-                       value.put("type", "long")
-                   }
-               }
-               value.put("nick", nickname.text.toString())
-               db.insertOrThrow(TableInfo.TABLE_NAME, null, value)
-               Toast.makeText(
-                   rootView.context,
-                   getString(R.string.toast_database_save_success),
-                   Toast.LENGTH_SHORT
-               ).show()
-               nickname.text = ""
-               nickname.clearFocus()
-               Handler().postDelayed({
-                   nickname.visibility = View.GONE
-                   saveScoreButton.visibility = View.GONE
-                   nicknameLayout.visibility = View.GONE
-               }, 200)
-               db.close()
-           } else {
-               Toast.makeText(
-                   rootView.context,
-                   getString(R.string.toast_enter_nickname),
-                   Toast.LENGTH_SHORT
-               ).show()
-           }
+            if (nickname.text.toString() != "") {
+                val dbHelper = DataBaseHelper(rootView.context)
+                val db = dbHelper.writableDatabase
+                val value = ContentValues()
+                value.put("score", param2 as Int)
+                when (param1 as Int) {
+                    1 -> {
+                        value.put("type", "short")
+                    }
+                    2 -> {
+                        value.put("type", "medium")
+                    }
+                    3 -> {
+                        value.put("type", "long")
+                    }
+                }
+                value.put("nick", nickname.text.toString())
+                db.insertOrThrow(TableInfo.TABLE_NAME, null, value)
+                Toast.makeText(
+                    rootView.context,
+                    getString(R.string.toast_database_save_success),
+                    Toast.LENGTH_SHORT
+                ).show()
+                nickname.text = ""
+                nickname.clearFocus()
+                Handler().postDelayed({
+                    nickname.visibility = View.GONE
+                    saveScoreButton.visibility = View.GONE
+                    nicknameLayout.visibility = View.GONE
+                }, 200)
+                db.close()
+            } else {
+                Toast.makeText(
+                    rootView.context,
+                    getString(R.string.toast_enter_nickname),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
