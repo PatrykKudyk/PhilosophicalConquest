@@ -48,7 +48,6 @@ class WinFragment : Fragment() {
     private lateinit var saveScoreButton: Button
     private lateinit var playAgainButton: Button
     private lateinit var backToMenuButton: Button
-    private lateinit var mInterstitialAd: InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,11 +110,6 @@ class WinFragment : Fragment() {
         nickname = rootView.findViewById(R.id.win_text_input_nickname)
         nicknameLayout = rootView.findViewById(R.id.win_text_layout_nickname)
 
-        MobileAds.initialize(rootView.context)
-        mInterstitialAd = InterstitialAd(rootView.context)
-//        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
-        mInterstitialAd.adUnitId = "ca-app-pub-1626761492159766/6500258429"
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         var playPressed = true
 
@@ -141,123 +135,50 @@ class WinFragment : Fragment() {
                 (param2 as Int / 60).toString() + ":" + (param2 as Int % 60).toString()
         }
 
+
+
         playAgainButton.setOnClickListener {
-            playPressed = true
-            if (mInterstitialAd.isLoaded) {
-                mInterstitialAd.show()
-            } else {
-                when (param1) {
-                    1 -> {
-                        val gameFragment = GameFragment.newInstance(1)
-                        fragmentManager
-                            ?.beginTransaction()
-                            ?.setCustomAnimations(
-                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                            )
-                            ?.replace(R.id.frame_layout, gameFragment)
-                            ?.commit()
-                    }
-                    2 -> {
-                        val gameFragment = GameFragment.newInstance(2)
-                        fragmentManager
-                            ?.beginTransaction()
-                            ?.setCustomAnimations(
-                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                            )
-                            ?.replace(R.id.frame_layout, gameFragment)
-                            ?.commit()
-                    }
-                    3 -> {
-                        val gameFragment = GameFragment.newInstance(3)
-                        fragmentManager
-                            ?.beginTransaction()
-                            ?.setCustomAnimations(
-                                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                            )
-                            ?.replace(R.id.frame_layout, gameFragment)
-                            ?.commit()
-                    }
-                }
-            }
-        }
-
-        mInterstitialAd.adListener = object : AdListener() {
-            override fun onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-            }
-
-            override fun onAdFailedToLoad(errorCode: Int) {
-                // Code to be executed when an ad request fails.
-            }
-
-            override fun onAdOpened() {
-                // Code to be executed when the ad is displayed.
-            }
-
-            override fun onAdClicked() {
-                // Code to be executed when the user clicks on an ad.
-            }
-
-            override fun onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            override fun onAdClosed() {
-                if (playPressed) {
-                    when (param1) {
-                        1 -> {
-                            val gameFragment = GameFragment.newInstance(1)
-                            fragmentManager
-                                ?.beginTransaction()
-                                ?.setCustomAnimations(
-                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                                )
-                                ?.replace(R.id.frame_layout, gameFragment)
-                                ?.commit()
-                        }
-                        2 -> {
-                            val gameFragment = GameFragment.newInstance(2)
-                            fragmentManager
-                                ?.beginTransaction()
-                                ?.setCustomAnimations(
-                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                                )
-                                ?.replace(R.id.frame_layout, gameFragment)
-                                ?.commit()
-                        }
-                        3 -> {
-                            val gameFragment = GameFragment.newInstance(3)
-                            fragmentManager
-                                ?.beginTransaction()
-                                ?.setCustomAnimations(
-                                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                                )
-                                ?.replace(R.id.frame_layout, gameFragment)
-                                ?.commit()
-                        }
-                    }
-                } else {
+            when (param1) {
+                1 -> {
+                    val gameFragment = GameFragment.newInstance(1)
                     fragmentManager
-                        ?.popBackStack()
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
+                }
+                2 -> {
+                    val gameFragment = GameFragment.newInstance(2)
+                    fragmentManager
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
+                }
+                3 -> {
+                    val gameFragment = GameFragment.newInstance(3)
+                    fragmentManager
+                        ?.beginTransaction()
+                        ?.setCustomAnimations(
+                            R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                            R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                        )
+                        ?.replace(R.id.frame_layout, gameFragment)
+                        ?.commit()
                 }
             }
-        }
 
+        }
 
         backToMenuButton.setOnClickListener {
-            playPressed = false
-            if (mInterstitialAd.isLoaded) {
-                mInterstitialAd.show()
-            } else {
-                fragmentManager
-                    ?.popBackStack()
-            }
+            fragmentManager
+                ?.popBackStack()
         }
 
         saveScoreButton.setOnClickListener {

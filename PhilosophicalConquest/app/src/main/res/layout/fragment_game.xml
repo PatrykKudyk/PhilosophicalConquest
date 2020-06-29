@@ -139,7 +139,7 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="100dp"
+                                android:layout_height="125dp"
                                 android:orientation="vertical"
                                 android:weightSum="100">
 
@@ -166,11 +166,27 @@
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="10dp"
-                                        android:layout_weight="80"
+                                        android:layout_weight="55"
                                         android:fontFamily="@font/archeologicaps"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:text="@string/philosophy_cell_1" />
 
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="21"
+                                        android:fontFamily="@font/kingthingsregular"
+                                        android:gravity="right|center"
+                                        android:text="0"
+                                        android:textSize="26dip" />
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="17dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="4dp"
+                                        android:layout_weight="4"
+                                        android:src="@drawable/greek" />
 
                                 </LinearLayout>
 
@@ -188,6 +204,8 @@
                                     android:fontFamily="@font/kingthingsregular"
                                     android:gravity="center"
                                     android:text="@string/philosophy_income_1" />
+
+
 
 
                             </LinearLayout>

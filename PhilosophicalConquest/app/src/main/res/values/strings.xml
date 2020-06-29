@@ -58,4 +58,6 @@
     <string name="credits_title">Credits</string>
     <string name="credits_app_author">App was made by Patryk Kudyk</string>
     <string name="credits_icons_author">Icons made by Freepik from flaticon.com</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

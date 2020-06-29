@@ -15,6 +15,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.philosophicalconquest.R
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.fragment_game.view.*
 
 
@@ -64,6 +67,7 @@ class GameFragment : Fragment() {
     private lateinit var incomePlus: TextView
     private lateinit var incomeMinus: TextView
     private lateinit var incomeTextView: TextView
+    private lateinit var mInterstitialAd: InterstitialAd
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,6 +128,12 @@ class GameFragment : Fragment() {
         incomePlus = rootView.findViewById(R.id.game_income_plus)
         incomeMinus = rootView.findViewById(R.id.game_income_minus)
         incomeTextView = rootView.findViewById(R.id.game_text_view_income)
+
+        MobileAds.initialize(rootView.context)
+        mInterstitialAd = InterstitialAd(rootView.context)
+//        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-1626761492159766/6500258429"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         initCardViews()
         backToMenuButton.setOnClickListener {
@@ -331,6 +341,9 @@ class GameFragment : Fragment() {
     private fun isEnd(): Boolean {
         if (param1 as Int == 1) {
             if (money >= 1000000) {
+                if (mInterstitialAd.isLoaded) {
+                    mInterstitialAd.show()
+                }
                 val winFragment = WinFragment.newInstance(param1 as Int, time)
                 fragmentManager
                     ?.beginTransaction()
@@ -344,6 +357,9 @@ class GameFragment : Fragment() {
             }
         } else if (param1 as Int == 2) {
             if (money >= 50000000) {
+                if (mInterstitialAd.isLoaded) {
+                    mInterstitialAd.show()
+                }
                 val winFragment = WinFragment.newInstance(param1 as Int, time)
                 fragmentManager
                     ?.beginTransaction()
@@ -357,6 +373,9 @@ class GameFragment : Fragment() {
             }
         } else if (param1 as Int == 3) {
             if (money >= 900000000) {
+                if (mInterstitialAd.isLoaded) {
+                    mInterstitialAd.show()
+                }
                 val winFragment = WinFragment.newInstance(param1 as Int, time)
                 fragmentManager
                     ?.beginTransaction()
